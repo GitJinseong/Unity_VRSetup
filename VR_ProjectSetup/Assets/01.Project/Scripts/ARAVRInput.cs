@@ -91,7 +91,7 @@ public static class ARAVRInput
             Vector3 direction = LHandPosition - Camera.main.transform.position;
             LHand.forward = direction;
 #elif TARGET_DEVICE_OCULUS
-            Vector3 direction = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) * Vector3.forward;
+            Vector3 direction = OVRInput.GetLocalControllerRotation(OVRInput.Controller.LTouch) * Vector3.forward;
             direction = GetTransform().TransformDirection(direction);
 #else
             Vector3 direction = default;
@@ -140,7 +140,7 @@ public static class ARAVRInput
             Vector3 direction = RHandPosition - Camera.main.transform.position;
             RHand.forward = direction;
 #elif TARGET_DEVICE_OCULUS
-            Vector3 direction = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) * Vector3.forward;
+            Vector3 direction = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward;
             direction = GetTransform().TransformDirection(direction);
 #else
             Vector3 direction = default;
@@ -416,7 +416,7 @@ public static class ARAVRInput
     public static void PlayVibration(Controller hand)
     {
 #if TARGET_DEVICE_OCULUS
-        PlayVibration(0.06f, 1f, 1f, hand);
+        PlayVibration(0.06f, 1.0f, 1.0f, hand);
 #endif      // TARGET_DEVICE_OCULUS
     }       // PlayVibration()
 

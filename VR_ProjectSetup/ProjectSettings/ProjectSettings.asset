@@ -709,7 +709,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: BUILD_PLATFORM_PC;TARGET_DEVICE_OCULUS
+    Standalone: TARGET_DEVICE_OCULUS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
